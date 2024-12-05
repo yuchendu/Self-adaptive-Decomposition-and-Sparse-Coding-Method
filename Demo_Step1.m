@@ -53,19 +53,3 @@ im_abnormal = fileloading3D(im_abnormal_path);
 edge = imread('mask_out.bmp');
 weight = getWeightTen(im_abnormal,patchDic,patchSize,edge);
 
-%%
-
-a = weight(:,:,10);
-% a(edge_inner==0)=nan;
-% max_a = max(a(:));
-% min_a = min(a(:));
-% min_a = 0.95;
-% a = (a-min_a)/(max_a-min_a);
-% a(isnan(a))=1;
-% a(edge_inner==0)=1;
-imshow(a);
-
-%%
-a(a>0.6)=0;
-a = a/0.6;
-imshow(a);
