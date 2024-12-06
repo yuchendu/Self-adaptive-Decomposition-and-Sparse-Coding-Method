@@ -2,7 +2,7 @@
 % clc;
 
 path_ab = '.\abnormal_fundus_dir';
-path_nor = '..\imageNormal';
+path_nor = '..\normal_fundus_dir';
 ImgTensor_ab = fileloading(path_ab,2);
 ImgTensor_ab = double(ImgTensor_ab);
 % ImgTensor_ab = 255-ImgTensor_ab;
