@@ -1,4 +1,4 @@
-function [codebookNew, coefficientNew] = ksvd(data, coefficient, codebook,gamma)
+function [codebookNew, coefficientNew] = ksvd(data, coefficient, codebook)
 % this function aims to regenerate the codebook using K-SVD algorithm
 % input: data, sparse representation coefficient, codebook
 % output: new codebook, new sparse representation coefficient
