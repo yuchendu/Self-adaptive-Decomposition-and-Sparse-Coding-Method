@@ -32,24 +32,17 @@ dictionarySize = 50;
 Dictionary = data(:,randperm(size(data,2),dictionarySize));
 
 iterate = 100;
-maxAtomNum = 10;
+maxAtomNum = 6;
 proposedResidual = 1e-5;
+gamma = 0.2;
 
 %%
 for num = 1:iterate
-   [sparseX, residual] = OMP(data, Dictionary, maxAtomNum, proposedResidual);% max num of atom: 6, proposed residual: 5, gamma: 5.25 
+   [sparseX, residual] = OMP(data, Dictionary, maxAtomNum, proposedResidual, gamma);
    sparseX(isnan(sparseX)) = 0;
    [Dictionary, sparseX] = ksvd(data, sparseX, Dictionary);
 end
 
-%% transfer vector to image
-patchSize = 9;
-patchDic = getPatchDic(Dictionary,patchSize);
-
-%%
-% abnormal fundus image loading
-im_abnormal_path = './RGB_abnormal';
-im_abnormal = fileloading3D(im_abnormal_path);
-edge = imread('mask_out.bmp');
-weight = getWeightTen(im_abnormal,patchDic,patchSize,edge);
+%% save dictionary
+save(['dictionary_',num2str(dictionarySize),'_',num2str(patchSize),'_gamma_',num2str(gamma),'.mat']);
 
