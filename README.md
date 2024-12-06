@@ -14,3 +14,24 @@ Here we illustrate the weight silency maps generated under different dictionarie
 
 ## Advantages and Limitations
 The primary advantage of this study lies in the use of weights (saliency maps) to refine the decomposition of diverse lesions. These weights, which incorporate the color and contextual saliency of lesions, effectively compensate for the information loss that occurs with solo low-rank decomposition of a single channel. However, there are also some limitations. First, while the method compensates for the shortcomings of low-rank decomposition by addressing the inability to directly perform low-rank decomposition on multi-channel images, it does not resolve this issue at the foundational level of the decomposition method. Second, the method involves several steps, making it somewhat complex. Third, it requires the healthy images to exhibit a highly low-rank property.
+
+## Citations
+If you find this model useful for your research, please consider citing:
+
+```bibtex
+@article{Du:22,
+author = {Yuchen Du and Lisheng Wang and Benzhi Chen and Chengyang An and Hao Liu and Ying Fan and Xiuying Wang and Xun Xu},
+journal = {Biomed. Opt. Express},
+number = {8},
+pages = {4261--4277},
+title = {Anomaly detection in fundus images by self-adaptive decomposition via local and color based sparse coding},
+volume = {13},
+month = {Aug},
+year = {2022},
+url = {https://opg.optica.org/boe/abstract.cfm?URI=boe-13-8-4261},
+doi = {10.1364/BOE.461224},
+}
+```
+
+## Contact
+If you have any questions, please feel free to contact yuchendu@rocketmail.com
